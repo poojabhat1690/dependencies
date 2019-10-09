@@ -56,7 +56,21 @@ From:ubuntu:16.04
 
         ###### install using pip
         pip3 install 'cutadapt'
-        #pip3 install 'slamdunk'
+
+	 apt-get install -y tzdata && \
+        apt-get install -y software-properties-common && \
+        add-apt-repository -y -u ppa:certbot/certbot && \
+        apt-get install -y   r-base-core libxml2-dev
+
+
+
+R --slave -e 'source("https://bioconductor.org/biocLite.R")'
+R --slave -e 'BiocInstaller::biocLite(c("GenomicRanges"))'
+R --slave -e 'BiocInstaller::biocLite(c("biomaRt"))'
+R --slave -e 'BiocInstaller::biocLite(c("Biostrings"))'
+R --slave -e 'install.packages(c("checkmate", "ggplot2","reshape","dplyr","plyr","tibble"), repos="https://cloud.r-project.org/")'
+
+
 
 
 %environment
