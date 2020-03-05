@@ -10,7 +10,7 @@ From:ubuntu:16.04
 
     apt-get -y update
   apt-get install -y libopenblas-dev  libcurl4-openssl-dev libopenmpi-dev openmpi-bin openmpi-common openmpi-doc openssh-client openssh-server libssh-dev wget vim git nano git cmake  gfortran g++ curl wget python autoconf bzip2 libtool libtool-bin
-
+#bedtools versions must be changed
         apt-get -y install bedtools
     apt-get -y  install python3-dev python3-pip
 
